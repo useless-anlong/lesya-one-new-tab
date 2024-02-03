@@ -13,10 +13,9 @@
     src: url(./fonts/BalooDa2-VF.ttf);
 }
 
-html {
-    background-image: url(../img/non-internet-bg.png);
-    background-size: cover;
-    background-position: center;
+@font-face {
+    font-family: SilentSymbol;
+    src: url(./fonts/silentsymbol-VF.ttf);
 }
 
 body {
@@ -38,7 +37,7 @@ body {
     font-size: 14px;
 } */
 
-#octo {
+#silent-start {
     fill: #000000ab;
     backdrop-filter: blur(10px);
 }
@@ -53,5 +52,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 18px;
+    margin: 10px;
+}
+
+#n {
+    font-family: 'SilentSymbol', 'MiSans';
+    font-size: 21px;
+    width: 24px;
+    display: flex;
+    margin-top: -3px;
+    opacity: 0.75;
+}
+
+#n2 {
+    font-family: 'SilentSymbol', 'MiSans';
+    font-size: 21px;
+    width: 24px;
+    display: flex;
+    margin-top: -3px;
+    opacity: 0;
+}
+
+#statusBar {
+    display: flex;
+    gap: 10px;
+    margin-top: -1px;
 }

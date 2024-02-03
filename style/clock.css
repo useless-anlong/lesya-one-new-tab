@@ -25,9 +25,9 @@
     display: flex;
     gap: 1px;
     align-items: center;
-    line-height: 80px;
-    font-weight: 750;
-    font-size: 78px;
+    line-height: 86px;
+    font-weight: 450;
+    font-size: 82px;
     font-family: 'BalooDa';
     margin: 0;
 }
@@ -56,4 +56,5 @@
 
 .colon {
     margin-top: -12px;
+    font-weight: 400;
 }
