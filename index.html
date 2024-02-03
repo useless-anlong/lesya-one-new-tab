@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./style/clock.css">
     <link rel="stylesheet" type="text/css" href="./style/search.css">
     <link rel="stylesheet" type="text/css" href="./style/univar.css">
+    <link rel="stylesheet" type="text/css" href="./style/menu.css">
     <link rel="stylesheet" type="text/css" href="./style/quickstart.css">
     <link rel="icon" href="./img/logo.png">
 </head>
@@ -101,7 +102,7 @@
             <input type="checkbox" id="searchBarHover">
             <label for="searchBarHover" id="searchBox">搜索</label>
 
-            <label class="nav-items" for="searchBarHover">
+            <label class="nav-items" οnclick="createMenu()" for="searchBarHover">
                 <form id="searchBoxMain" target="_self" method="get" action="https://www.baidu.com/s">
                     <input type="text" placeholder="按下 Enter 键发起搜索" autocomplete="off" name="word" class="text" />
                 </form>
@@ -151,9 +152,110 @@
                     document.getElementById(id).textContent = msg;
                     console.log(msg);
                 }
+
+                const ContextMenu = function (options) {
+                    let instance;
+
+                    function createMenu() {
+                        const ul = document.createElement("ul");
+                        ul.classList.add("custom-context-menu");
+                        const { menus } = options;
+                        const menuOpenAnim = [
+                            { transform: "rotate(0) scale(1)" },
+                            { transform: "rotate(360deg) scale(0)" },
+                        ];
+
+                        const menuOpenTiming = {
+                            duration: 2000,
+                            iterations: 1,
+                        };
+                        if (menus && menus.length > 0) {
+                            for (let menu of menus) {
+                                const li = document.createElement("li");
+                                li.textContent = menu.name;
+                                li.onclick = menu.onClick;
+                                ul.animate(menuOpenAnim, menuOpenTiming);
+                                ul.appendChild(li);
+                            }
+                        }
+                        const body = document.querySelector("body");
+                        body.appendChild(ul);
+                        return ul;
+                    }
+
+                    return {
+                        getInstance: function () {
+                            if (!instance) {
+                                instance = createMenu();
+                            }
+                            return instance;
+                        },
+                    };
+                };
+
+                const contextMenu = ContextMenu({
+                    menus: [
+                        {
+                            name: "通用设置",
+                            onClick: function (e) {
+                                console.log("settings clicked");
+                            },
+                        },
+                        {
+                            name: "搜索引擎偏好",
+                            onClick: function (e) {
+                                console.log("search-settings clicked");
+                            },
+                        },
+                        {
+                            name: "管理快捷菜单栏",
+                            onClick: function (e) {
+                                console.log("menu-setting clicked");
+                            },
+                        },
+                        {
+                            name: "关于 Silent Start",
+                            onClick: function (e) {
+                                console.log("about clicked");
+                            },
+                        },
+                        {
+                            name: "帮助与支持",
+                            onClick: function (e) {
+                                console.log("help clicked");
+                            },
+                        },
+                    ],
+                });
+
+                function showMenu(e) {
+                    e.preventDefault();
+                    const menus = contextMenu.getInstance();
+                    menus.style.top = `${e.clientY}px`;
+                    menus.style.left = `${e.clientX}px`;
+                    menus.classList.remove("hidden");
+                }
+
+                function hideMenu(event) {
+                    const menus = contextMenu.getInstance();
+                    menus.classList.add("hidden");
+                }
+
+                document.addEventListener("contextmenu", showMenu);
+                document.addEventListener("click", hideMenu);
+
             </script>
         </div>
     </div>
+    <!-- <div class="contextmenu" id="context">
+        <ul>
+            <li class="li"><a href="javascript:;">复制</a></li>
+            <li class="li"><a href="javascript:;">粘贴</a> </li>
+            <li class="li"><a href="javascript:;">剪切</a></li>
+            <li class="li"><a href="javascript:;">下载</a></li>
+            <li class="li"><a href="javascript:;">上传</a></li>
+        </ul>
+    </div> -->
     <!-- <footer>
         <p>AnLong 2024 - From Rebyte Labs</p>
     </footer> -->
