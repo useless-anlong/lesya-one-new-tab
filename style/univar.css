@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Figtree;
+    src: url(./fonts/Figtree-VF.ttf);
+}
+
+@font-face {
+    font-family: MiSans;
+    src: url(./fonts/MiSans-VF.ttf);
+}
+
+@font-face {
+    font-family: BalooDa;
+    src: url(./fonts/BalooDa2-VF.ttf);
+}
+
+html {
+    background-image: url(../img/non-internet-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    background-image: url(https://api.paugram.com/bing/);
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+}
+
+/* p {
+    margin: 0;
+    font-size: 14px;
+} */
+
+#octo {
+    fill: #000000ab;
+    backdrop-filter: blur(10px);
+}
+
+.logoBox {
+    height: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 18px;
+}

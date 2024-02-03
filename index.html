@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octo Start</title>
+    <link rel="stylesheet" type="text/css" href="./style/clock.css">
+    <link rel="stylesheet" type="text/css" href="./style/search.css">
+    <link rel="stylesheet" type="text/css" href="./style/univar.css">
+    <link rel="stylesheet" type="text/css" href="./style/quickstart.css">
+    <link rel="icon" href="./img/logo-dark.png">
+</head>
+
+<body>
+    <div id="time">
+        <!--CLOCK-->
+        <script>
+
+            //GET
+            Date.prototype.format = function (fmt) {
+                var o = {
+                    "y+": this.getFullYear, //YEAR
+                    "M+": this.getMonth() + 1, //MONTH
+                    "d+": this.getDate(), //DAY
+                    "h+": this.getHours(), //HOUR
+                    "m+": this.getMinutes(), //MINUTE
+                    "s+": this.getSeconds(), //SECOND
+                };
+                if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                for (var k in o)
+                    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                return fmt;
+            }
+
+            //INPUT
+            // setInterval("document.getElementById('date0').innerHTML = (new Date()).format('yy');", 100);
+            setInterval("document.getElementById('date1').innerHTML = (new Date()).format('M');", 100);
+            setInterval("document.getElementById('date2').innerHTML = (new Date()).format('d');", 100);
+            setInterval("document.getElementById('clock1').innerHTML = (new Date()).format('hh');", 100);
+            setInterval("document.getElementById('clock2').innerHTML = (new Date()).format('mm');", 100); 
+        </script>
+        <!--DATE & CLOCK-->
+        <div id="date">
+
+            <div id="datetextBox">
+                <div class="datetext" id="date1"></div><span class="datetextCN">月</span>
+                <div class="datetext" id="date2"></div><span class="datetextCN">日</span>
+            </div>
+            <div id="weekday" class="datetextCN">
+                <script>
+                    //GET DATE
+                    const birthday = new Date();
+                    const Xmas95 = new Date();
+                    const day1 = birthday.getDay();
+                    // Sunday - Saturday : 0 - 6
+                    var options = { weekday: "long" };
+                    document.write(new Intl.DateTimeFormat("zh-CN", options).format(Xmas95));
+                </script>
+            </div>
+        </div>
+        <div id="clock">
+            <div class="clocktext" id="clock1"></div>
+            <span class="colon">:</span>
+            <div class="clocktext" id="clock2"></div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="quickstart">
+            <li class="startBtn">
+                <div class="startBtnName" id="na01">关于 Octo Start</div>
+                <div class="startBtnIcon" id="ic01">
+                    <img src="./img/logo-dark.png">
+                </div>
+            </li>
+            <li class="startBtn">
+                <div class="startBtnName" id="na01">关于 Octo Start</div>
+                <div class="startBtnIcon" id="ic01">
+                    <img src="./img/logo-dark.png">
+                </div>
+            </li>
+            <li class="startBtn">
+                <div class="startBtnName" id="na01">关于 Octo Start</div>
+                <div class="startBtnIcon" id="ic01">
+                    <img src="./img/logo-dark.png">
+                </div>
+            </li>
+            <li class="startBtn">
+                <div class="startBtnName" id="na01">关于 Octo Start</div>
+                <div class="startBtnIcon" id="ic01">
+                    <img src="./img/logo-dark.png">
+                </div>
+            </li>
+            <li class="startBtn">
+                <div class="startBtnName" id="na01">关于 Octo Start</div>
+                <div class="startBtnIcon" id="ic01">
+                    <img src="./img/logo-dark.png">
+                </div>
+            </li>
+        </div>
+        <div id="search">
+            <input type="checkbox" id="searchBarHover">
+            <label for="searchBarHover" id="searchBox">搜索</label>
+
+            <label class="nav-items" for="searchBarHover">
+                <form id="searchBoxMain" target="_self" method="get" action="https://www.baidu.com/s">
+                    <input type="text" placeholder="按下 Enter 键发起搜索" autocomplete="off" name="word" class="text" />
+                </form>
+
+                <script>
+                    var t = document.getElementById("text");
+
+                    function fun() {
+                        t.submit()
+                        // t.reset();
+                        alert(t.value);
+                        return false;
+                    }
+                </script>
+
+            </label>
+        </div>
+        <span class="logoBox">
+            <svg width="73.5" height="12" viewBox="0 0 1152.5400390625 188.17999267578125" fill="none">
+                <path id="octo" fill-rule="evenodd"
+                    d="M88.02 188.18C143.664 188.18 175.79 147.711 175.79 94.09C175.79 40.4688 143.664 0 88.02 0C32.3753 0 0 40.4688 0 94.09C0 147.711 32.6283 188.18 88.02 188.18ZM676.04 187.3C661.155 187.3 649.04 183.93 649.04 183.93C636.946 180.581 628.04 174.79 628.04 174.79C619.136 168.993 613.29 161.79 613.29 161.79C607.442 154.576 608.139 155.204 605.06 146.58C603.784 143.004 602.83 138.535 602.15 134.53L628.94 134.53C629.296 135.76 629.749 137.114 630.31 138.6C634.297 149.163 645.48 156.88 645.48 156.88C656.644 164.609 672.83 164.86 672.83 164.86C692.5 164.86 703.82 157.26 703.82 157.26C715.117 149.659 715.09 137.07 715.09 137.07C715.09 125.476 705.28 118.12 705.28 118.12C695.446 110.777 679.22 106.91 679.22 106.91L657.7 101.51C644.941 98.1603 634.42 91.95 634.42 91.95C623.92 85.7665 617.84 76.25 617.84 76.25C611.727 66.7171 611.71 53.31 611.71 53.31C611.71 28.5764 628.34 14.68 628.34 14.68C644.954 0.767331 676.3 0.76 676.3 0.76C694.375 0.76 707.68 6.28 707.68 6.28C720.97 11.8193 727.86 20.04 727.86 20.04C736.499 29.0574 736.484 32.0044 738.97 38.61C741.456 45.2156 741.961 49.2854 742.74 53.52L716.16 53.52C715.765 52.1715 715.245 48.5741 714.58 46.87C710.062 35.2761 701.29 30.26 701.29 30.26C690.392 23.1748 674.46 23.19 674.46 23.19C657.714 23.19 648.01 30.92 648.01 30.92C638.308 38.6493 638.28 52.02 638.28 52.02C638.28 63.3563 645.87 69.43 645.87 69.43C653.446 75.4847 666.19 78.57 666.19 78.57L687.75 83.72C713.8 89.9036 727.99 104.21 727.99 104.21C742.211 118.509 742.22 135.49 742.22 135.49C742.22 150.176 734.64 161.91 734.64 161.91C727.064 173.632 712.31 180.48 712.31 180.48C697.558 187.308 676.04 187.3 676.04 187.3ZM398.82 53.62L372.51 53.62L372.51 16.19L347.22 24L347.22 53.62L326.23 53.62L326.23 74.36L347.22 74.36L347.22 155.05C347.22 176.296 359.109 184.89 383.39 184.89C388.196 184.89 393.256 184.636 398.82 184.13L398.82 163.9L387.44 163.9C376.564 163.9 372.51 160.611 372.51 152.77L372.51 74.36L398.82 74.36L398.82 53.62ZM828.14 53.62L801.84 53.62L801.84 16.19L776.55 24L776.55 53.62L755.55 53.62L755.55 74.36L776.55 74.36L776.55 155.05C776.55 176.296 788.428 184.89 812.71 184.89C817.515 184.89 822.576 184.636 828.14 184.13L828.14 163.9L816.76 163.9C805.884 163.9 801.84 160.611 801.84 152.77L801.84 74.36L828.14 74.36L828.14 53.62ZM1152.54 53.62L1126.23 53.62L1126.23 16.19L1100.94 24L1100.94 53.62L1079.95 53.62L1079.95 74.36L1100.94 74.36L1100.94 155.05C1100.94 176.296 1112.83 184.89 1137.11 184.89C1141.91 184.89 1146.97 184.636 1152.54 184.13L1152.54 163.9L1141.16 163.9C1130.28 163.9 1126.23 160.611 1126.23 152.77L1126.23 74.36L1152.54 74.36L1152.54 53.62ZM88.02 163.9C47.2982 163.9 28.08 131.524 28.08 94.09C28.08 56.6563 47.2982 24.28 88.02 24.28C128.994 24.28 147.71 56.4034 147.71 94.09C147.71 131.524 128.741 163.9 88.02 163.9ZM254.2 187.17C285.563 187.17 308.573 168.194 312.62 137.59L286.82 137.59C283.785 155.801 270.64 165.16 254.2 165.16C232.954 165.16 218.28 149.232 218.28 118.88C218.28 88.5285 232.701 72.59 254.2 72.59C270.387 72.59 283.282 81.6978 286.57 99.15L312.37 99.15C308.323 69.5572 286.322 50.59 254.2 50.59C213.731 50.59 191.97 80.4347 191.97 118.88C191.97 156.82 214.237 187.17 254.2 187.17ZM540.23 118.88C540.23 79.1701 516.705 50.59 475.73 50.59C435.008 50.59 410.98 79.1701 410.98 118.88C410.98 158.084 435.261 187.17 475.73 187.17C516.452 187.17 540.23 158.337 540.23 118.88ZM942.74 71.33C932.876 57.4188 918.964 50.59 900.5 50.59C860.284 50.59 840.81 81.4465 840.81 118.88C840.81 156.314 860.284 187.17 900.5 187.17C919.47 187.17 933.886 179.833 943.75 164.91L944.97 169.38L945 169.4C947.467 180.198 954.868 184.91 969.76 184.91C974.313 184.91 978.366 184.656 982.16 184.15L982.16 164.67L975.07 164.67C970.629 164.67 968.351 162.728 968.03 159.04L968.03 53.62L942.74 53.62L942.74 71.33ZM1061 51.6C1042.28 51.6 1028.63 59.9437 1020.28 76.89L1020.28 53.62L996 53.62L996 184.13L1021.29 184.13L1021.29 119.81C1021.29 95.2754 1036.47 80.88 1062.01 75.88L1068.34 75.88L1068.34 51.85C1066.59 51.5999 1064.1 51.6 1061.11 51.6L1061 51.6ZM475.73 165.42C452.208 165.42 437.29 148.22 437.29 118.88C437.29 89.5402 452.208 72.34 475.73 72.34C499 72.34 513.93 89.5402 513.93 118.88C513.93 148.22 499 165.42 475.73 165.42ZM867.11 119.89C867.11 95.6085 877.983 72.34 905.3 72.34C932 72.34 942.74 96.5 943.5 118.88C944.26 141.26 930 165.42 905.3 165.42C878.236 165.42 867.11 144.424 867.11 119.89Z">
+                </path>
+            </svg>
+        </span>
+    </div>
+    <!-- <footer>
+        <p>AnLong 2024 - From Rebyte Labs</p>
+    </footer> -->
+</body>
+
+</html>

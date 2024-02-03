@@ -1,0 +1,59 @@
+#time {
+    user-select: none;
+    font-family: 'Figtree';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8%;
+    gap: 4px;
+    filter: invert;
+}
+
+#date {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+#datetextBox {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+#clock {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    line-height: 80px;
+    font-weight: 750;
+    font-size: 78px;
+    font-family: 'BalooDa';
+    margin: 0;
+}
+
+/* .clocktext {
+    background: #1A1B1Cb0;
+    backdrop-filter: blur(10px);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    color: transparent;
+} */
+
+.datetext {
+    font-family: 'Figtree';
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.datetextCN {
+    font-family: 'MiSans';
+    font-size: 16px;
+    font-weight: 375;
+}
+
+.colon {
+    margin-top: -12px;
+}
