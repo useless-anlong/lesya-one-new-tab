@@ -11,7 +11,12 @@
 
 由@useless-anlong 呈现
 
-#### [网页版](https://useless-anlong.github.io/silent-start/) \ Edge 扩展 \ Chrome 扩展 \ FireFox 扩展
+![Static Badge](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%89%88%E6%9C%AC-DB255A?style=for-the-badge&link=https%3A%2F%2Fsilentstart.cn)
+![Static Badge](https://img.shields.io/badge/EDGE-%230DD3D6?style=for-the-badge&logo=microsoftedge&logoColor=%23FFFFFF)
+![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=googlechrome&logoColor=%23FFFFFF&label=Chrome&labelColor=%234285F4&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
+![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=firefoxbrowser&logoColor=%23FFFFFF&label=FireFox&labelColor=%23FF7139&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
+
+
 
 </div>
 
@@ -38,6 +43,7 @@
 <h2>
 <img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-primary.png" width="32px">
 </h2>
+
 [简体中文](https://github.com/useless-anlong/silent-start/README.md) \ [ENGLISH](https://github.com/useless-anlong/silent-start/README/en_README.md)
     
 </div>
