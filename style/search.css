@@ -15,9 +15,10 @@
     backdrop-filter: blur(10px);
     padding: 0px 8px;
     border-radius: 12px;
-    color: #ffffff80;
+    color: var(--on-card-bg);
     transition: all .25s ease-in-out;
     font-size: 14px;
+    font-weight: var(--font-weight-regular);
     user-select: none;
     /* margin-block-end: 1em; */
 }
@@ -29,6 +30,7 @@
     width: auto;
     /* height: 35px; */
     font-size: 14px;
+    font-weight: var(--font-weight-regular);
     outline: none;
     background-color: unset;
     color: var(--on-card-bg);
@@ -56,6 +58,7 @@
     color: var(--on-card-bg);
     transition: all .25s ease-in-out;
     font-size: 14px;
+    font-weight: var(--font-weight-regular);
     user-select: none;
     margin-block-end: 44px;
     box-shadow: 0px 10px 40px #00000060;
@@ -65,6 +68,7 @@
     height: auto;
     margin: 0;
     font-size: 14px;
+    font-weight: var(--font-weight-regular);
 }
 
 #searchBoxMain:hover .text {
@@ -73,6 +77,7 @@
     border: 0;
     width: 100%;
     font-size: 14px;
+    font-weight: var(--font-weight-regular);
     outline: none;
     background-color: unset;
     color: var(--on-card-bg-hover);

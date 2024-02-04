@@ -20,27 +20,29 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --list-bg: #FFFFFF;
-        --list-line: #f0f2f4;
-        --list-bg-hover: #e1e3e6;
-        --on-list-bg: #1A1B1C;
-        --card-bg: #FFFFFF73;
-        --card-bg-hover: #FFFFFFab;
-        --on-card-bg: #1a1b1c8e;
-        --on-card-bg-hover: #1a1b1cef;
+        --list-bg: #ffffffde;
+        --list-line: #ffffffec;
+        --list-bg-hover: #ffffff;
+        --on-list-bg: #1b1b1b;
+        --card-bg: #ffffff8a;
+        --card-bg-hover: #ffffffc5;
+        --on-card-bg: #1a1a1a8e;
+        --on-card-bg-hover: #1f1f1fef;
+        --font-weight-regular: 450;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --list-bg: #1A1B1C;
-        --list-line: #343536;
-        --list-bg-hover: #2c2d2e;
+        --list-bg: #111111de;
+        --list-line: #1f1f1fec;
+        --list-bg-hover: #181818;
         --on-list-bg: #FFFFFF;
         --card-bg: #00000073;
         --card-bg-hover: #000000ab;
         --on-card-bg: #ffffff8e;
         --on-card-bg-hover: #ffffffef;
+        --font-weight-regular: 350;
     }
 }
 

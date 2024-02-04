@@ -9,9 +9,10 @@
     transition: all .25s ease-in-out;
     z-index: 7;
     width: 128px;
+    backdrop-filter: blur(8px);
 
     font-size: 13px;
-    font-weight: 350;
+    font-weight: var(--font-weight-regular);
     font-family: 'Figtree';
 
     &.hidden {
@@ -24,7 +25,7 @@
         transition: all 0.1s;
         border-radius: 6px;
         color: var(--on-list-bg);
-        transition: all .1s ease-in-out;
+        transition: all .2s ease-in-out;
 
         &:last-child {
             border-bottom: none;

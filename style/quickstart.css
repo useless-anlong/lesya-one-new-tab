@@ -10,7 +10,7 @@
 .startBtnIcon {
     height: 64px;
     width: 64px;
-    background-color: #00000073;
+    background-color: var(--card-bg);
     transition: all .25s ease-in-out;
     border-radius: 34px;
     backdrop-filter: blur(10px);
@@ -30,8 +30,8 @@
     border-radius: 8px;
     padding: 8px 12px;
     color: var(--on-list-bg);
-    font-size: 14px;
-    font-weight: 350;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
     font-family: 'Figtree';
     /* transform: scaleY(0); */
     margin-top: -18px;
@@ -40,10 +40,11 @@
     width: auto;
     opacity: 0;
     transition: all .25s ease-in-out;
+    backdrop-filter: blur(8px);
 }
 
 .startBtn:hover .startBtnIcon {
-    background-color: #000000ab;
+    background-color: var(--card-bg-hover);
 }
 
 .startBtn:hover .startBtnName {
