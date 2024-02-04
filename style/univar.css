@@ -18,6 +18,32 @@
     src: url(./fonts/silentsymbol-VF.ttf);
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --list-bg: #FFFFFF;
+        --list-line: #f0f2f4;
+        --list-bg-hover: #e1e3e6;
+        --on-list-bg: #1A1B1C;
+        --card-bg: #FFFFFF73;
+        --card-bg-hover: #FFFFFFab;
+        --on-card-bg: #1a1b1c8e;
+        --on-card-bg-hover: #1a1b1cef;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --list-bg: #1A1B1C;
+        --list-line: #343536;
+        --list-bg-hover: #2c2d2e;
+        --on-list-bg: #FFFFFF;
+        --card-bg: #00000073;
+        --card-bg-hover: #000000ab;
+        --on-card-bg: #ffffff8e;
+        --on-card-bg-hover: #ffffffef;
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -26,7 +52,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
-    background-image: url(https://api.paugram.com/bing/);
+    background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://api.paugram.com/bing/);
     background-size: cover;
     background-position: center;
     user-select: none;
@@ -38,7 +64,7 @@ body {
 } */
 
 #silent-start {
-    fill: #000000ab;
+    fill: #ffffffc5;
     backdrop-filter: blur(10px);
 }
 
@@ -57,19 +83,19 @@ body {
 
 #n {
     font-family: 'SilentSymbol', 'MiSans';
-    font-size: 21px;
+    font-size: 18px;
     width: 24px;
     display: flex;
-    margin-top: -3px;
-    opacity: 0.75;
+    margin-top: -1px;
+    color: #ffffffc5;
 }
 
 #n2 {
     font-family: 'SilentSymbol', 'MiSans';
-    font-size: 21px;
+    font-size: 18px;
     width: 24px;
     display: flex;
-    margin-top: -3px;
+    margin-top: -1px;
     opacity: 0;
 }
 

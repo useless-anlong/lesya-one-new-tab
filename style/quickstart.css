@@ -25,12 +25,13 @@
 }
 
 .startBtn .startBtnName {
-    background-color: #FFFFFF;
+    background-color: var(--list-bg);
+    box-shadow: 0px 2px 6px 2px #00000034;
     border-radius: 8px;
     padding: 8px 12px;
-    color: #1A1B1C;
+    color: var(--on-list-bg);
     font-size: 14px;
-    font-weight: 550;
+    font-weight: 350;
     font-family: 'Figtree';
     /* transform: scaleY(0); */
     margin-top: -18px;

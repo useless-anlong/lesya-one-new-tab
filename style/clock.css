@@ -13,6 +13,7 @@
     display: flex;
     gap: 4px;
     align-items: center;
+    color: #ffffffc5;
 }
 
 #datetextBox {
@@ -30,6 +31,7 @@
     font-size: 82px;
     font-family: 'BalooDa';
     margin: 0;
+    color: #ffffffc5;
 }
 
 /* .clocktext {
