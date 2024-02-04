@@ -1,2 +1,5 @@
-# reflection-start
-一个极致简约的浏览器起始页，聚焦于搜索、浏览时享受。
+<picture>
+    <source media="(perfers-color-scheme: dark)" srcset="">
+    <source media="(perfers-color-scheme: light)" srcset="">
+    <img src="">
+</picture>
