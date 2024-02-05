@@ -1,43 +1,49 @@
+<div align="center">
 <picture>
     <img src="https://github.com/useless-anlong/silent-start/blob/main/README/preview.png" width="85%" min-width="384px" align="center">
 </picture><br> 
 <picture>
-    <source media="(perfers-color-scheme: dark)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-dark.png" width="192px" align="center">
-    <source media="(perfers-color-scheme: light)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-light.png" width="192px" align="center">
-    <img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-primary.png" width="192px" align="center">
+    <source media="(perfers-color-scheme: dark)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-dark.png" width="284px" align="center">
+    <source media="(perfers-color-scheme: light)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-light.png" width="284px" align="center">
+    <img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-primary.png" width="284px" align="center">
 </picture>
-
-## 一个极致简约的浏览器起始页，聚焦于搜索，享受于浏览。
+    <h2>一个极致简约的浏览器起始页，聚焦于搜索，享受于浏览。</h2>
 
 由@useless-anlong 呈现
 
-#### [打开网页版](https://useless-anlong.github.io/silent-start/)
-#### Edge / Chrome 扩展
-#### FireFox 扩展
+![Static Badge](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%89%88%E6%9C%AC-DB255A?style=for-the-badge&link=https%3A%2F%2Fsilentstart.cn)
+![Static Badge](https://img.shields.io/badge/EDGE-%230DD3D6?style=for-the-badge&logo=microsoftedge&logoColor=%23FFFFFF)
+![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=googlechrome&logoColor=%23FFFFFF&label=Chrome&labelColor=%234285F4&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
+![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=firefoxbrowser&logoColor=%23FFFFFF&label=FireFox&labelColor=%23FF7139&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
 
----
 
-| 序号 | 功能 / 组件 / 样式 | 状态 |
-|-----:|---------------|---------------|
-|     1|欢迎向导|⛔ 暂未开发|
-|     2|时钟与日期|✅ 现已可用|
-|     3|模糊半透明时钟|🏳️ 计划中|
-|     4|搜索框|✅ 现已可用|
-|     5|搜索引擎切换|🏳️ 计划中|
-|     6|搜索记录|⛔ 暂未开发|
-|     7|快捷访问栏|🏳️ 计划中|
-|     8|必应壁纸|✅ 现已可用|
-|     9|问候语与天气|🏳️ 计划中|
-|     9|设置、帮助、关于|⛔ 暂未开发|
 
-本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。
+</div>
 
----
 
-<picture>
-    <img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-primary.png" width="32px" align="center">
-</picture>
-<li align="center">简体中文</li>
-<li align="center">English</li>
+<details>
+<summary align="center"> 功能列表</summary>
+    
+- [ ] 欢迎向导 [#4](https://github.com/useless-anlong/silent-start/issues/4)
+- [ ] 时钟与日期 [#5](https://github.com/useless-anlong/silent-start/issues/5)
+- [ ] 搜索框 [#6](https://github.com/useless-anlong/silent-start/issues/6)
+- [ ] 快捷访问栏 [#7](https://github.com/useless-anlong/silent-start/issues/7)
+- [x] 必应壁纸 [#8](https://github.com/useless-anlong/silent-start/issues/8)
+- [ ] 问候语与天气 [#9](https://github.com/useless-anlong/silent-start/issues/9)
+- [ ] 设置、帮助、关于 [#10](https://github.com/useless-anlong/silent-start/issues/10)
 
-项目使用 Apache License 开源协议
+<p align="center">本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。</p>
+
+</details>
+
+  
+
+<div align="center">
+
+<h2>
+<img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-primary.png" width="32px">
+</h2>
+
+[简体中文](https://github.com/useless-anlong/silent-start/README.md) \ [ENGLISH](https://github.com/useless-anlong/silent-start/README/en_README.md)
+    
+</div>
