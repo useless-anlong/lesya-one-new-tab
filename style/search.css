@@ -105,7 +105,9 @@ textarea::-webkit-input-placeholder {
 .nav-items {
     background-color: #0000002d;
     width: -webkit-fill-available;
+    width: 100%;
     height: -webkit-fill-available;
+    height: 100%;
     position: absolute;
     left: 0;
     opacity: 0;
