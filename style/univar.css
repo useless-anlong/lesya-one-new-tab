@@ -20,6 +20,11 @@
 
 @media (prefers-color-scheme: light) {
     :root {
+        --popup-bg: #f1f1f7;
+        --popup-header-bg: #f1f1f7b6;
+        --popup-card-bg: #ffffff;
+        --on-popup-bg: #141414;
+        --on-popup-card-bg: #2b2b2b;
         --list-bg: #ffffffde;
         --list-line: #ffffffec;
         --list-bg-hover: #ffffff;
@@ -34,6 +39,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --popup-bg: #141414;
+        --popup-header-bg:#141414b6;
+        --popup-card-bg: #2b2b2b;
+        --on-popup-bg: #ffffff;
+        --on-popup-card-bg: #dddddd;
         --list-bg: #111111de;
         --list-line: #1f1f1fec;
         --list-bg-hover: #181818;
@@ -44,65 +54,4 @@
         --on-card-bg-hover: #ffffffef;
         --font-weight-regular: 350;
     }
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: -webkit-fill-available;
-    box-sizing: border-box;
-    margin: 0;
-    background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://api.paugram.com/bing/);
-    background-size: cover;
-    background-position: center;
-    user-select: none;
-}
-
-/* p {
-    margin: 0;
-    font-size: 14px;
-} */
-
-#silent-start {
-    fill: #ffffffc5;
-    backdrop-filter: blur(10px);
-}
-
-.logoBox {
-    height: 14px;
-    display: flex;
-    align-items: center;
-}
-
-#main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-#n {
-    font-family: 'SilentSymbol', 'MiSans';
-    font-size: 18px;
-    width: 24px;
-    display: flex;
-    margin-top: -1px;
-    color: #ffffffc5;
-}
-
-#n2 {
-    font-family: 'SilentSymbol', 'MiSans';
-    font-size: 18px;
-    width: 24px;
-    display: flex;
-    margin-top: -1px;
-    opacity: 0;
-}
-
-#statusBar {
-    display: flex;
-    gap: 10px;
-    margin-top: -1px;
 }
