@@ -4,19 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 8%;
+    margin: 96px 0 0 0;
     gap: 4px;
     filter: invert;
 }
 
-#date {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    color: #ffffffc5;
-}
-
-#datetextBox {
+#dateBox {
     display: flex;
     gap: 2px;
     align-items: center;
@@ -29,7 +22,7 @@
     line-height: 86px;
     font-weight: 450;
     font-size: 82px;
-    font-family: 'BalooDa';
+    font-family: 'Figtree';
     margin: 0;
     color: #ffffffc5;
 }
@@ -48,15 +41,23 @@
     font-family: 'Figtree';
     font-size: 17px;
     font-weight: 400;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: #ffffffc5;
 }
 
 .datetextCN {
     font-family: 'MiSans';
     font-size: 16px;
     font-weight: 375;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: #ffffffc5;
 }
 
 .colon {
-    margin-top: -12px;
-    font-weight: 400;
+    margin-top: -16px;
+    font-weight: 550;
 }
