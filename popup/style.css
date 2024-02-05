@@ -2,39 +2,96 @@
     fill: #E34464;
 }
 
+.logo {
+    width: 278.5;
+    height: 30;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    transform: scale(1);
+}
+
+.logo:hover {
+    opacity: 0.9;
+    transform: scale(0.97);
+}
+
+#icon {
+    fill: var(--on-popup-card-bg);
+}
+
+#BackIcon {
+    position: fixed;
+    top: 14px;
+    left: 20px;
+    z-index: 25;
+
+    #icon {
+        fill: var(--on-popup-bg);
+    }
+}
+
+#BackIcon:hover {
+    #icon {
+        fill: var(--on-popup-card-bg);
+    }
+}
+
+:root {
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
-    margin: 0px;
+    margin: 48px 14px 14px 14px;
+    margin-top: 48px;
     background: var(--popup-bg);
     user-select: none;
-    width: 356px;
+    width: 326px;
+    gap: 10px;
     overflow: scroll;
+    scrollbar-width: none;
 }
 
 #title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 224px;
+    height: 256px;
+    width: 326px;
     justify-content: center;
     gap: 16px;
 
     p {
         font-weight: var(--font-weight-regular);
-        font-size: 13px;
+        font-size: 15px;
+        color: var(--on-popup-bg);
         font-family: 'Figtree';
         margin: 0;
         opacity: 0.75;
     }
 }
 
+#titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px;
+}
+
 @keyframes header-animate-it {
     from {
         opacity: 0;
-        margin-top: -10px;
+        margin-top: 10px;
     }
 
     to {
@@ -49,29 +106,191 @@ header {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    padding: 12px;
+    padding: 14px;
     width: -webkit-fill-available;
     backdrop-filter: blur(24px);
     position: fixed;
     z-index: 20;
     top: 0;
+    left: 0;
+    width: 326px;
     background: var(--popup-header-bg);
-    animation: header-animate-it linear;
-    animation-timeline: scroll(nearest block);
 
-    p {
+    p2 {
         font-weight: var(--font-weight-regular);
-        font-size: 16px;
+        font-size: 15px;
+        color: var(--on-popup-bg);
         font-family: 'MiSans';
         margin: 0;
         transform-origin: 0 20px;
+        animation: header-animate-it cubic-bezier(0.5, -0.25, 0.5, 1.25);
+        animation-timeline: scroll(nearest block);
+        animation-range-start: 0%;
+        animation-range-end: 55%;
+    }
 
+    p3 {
+        font-weight: var(--font-weight-regular);
+        font-size: 15px;
+        color: var(--on-popup-bg);
+        font-family: 'MiSans';
+        margin: 0;
+        transform-origin: 0 20px;
+        animation: header-animate-it cubic-bezier(0.5, -0.25, 0.5, 1.25);
+        animation-timeline: scroll(nearest block);
+        animation-range-start: 0%;
+        animation-range-end: 30%;
     }
 }
 
+#cardBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
 .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    color: var(--on-popup-bg);
+    font-weight: var(--font-weight-regular);
+    font-family: 'Figtree', 'MiSans';
+    padding: 14px;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.card[on-bg] {
     background: var(--popup-card-bg);
-    width: 324px;
-    height: 200vh;
-    border-radius: 12px;
+    border-radius: 14px;
+}
+
+.card[on-bg]:hover {
+    background: var(--popup-card-hover-bg);
+    border-radius: 14px;
+    transform: scale(0.985);
+}
+
+.card[non-bg]:hover {
+    transform: scale(0.985);
+}
+
+h1 {
+    margin: 0;
+    font-size: 37px;
+    font-family: 'MiSans';
+    color: var(--on-popup-bg);
+    font-weight: var(--font-weight-light);
+}
+
+h {
+    margin: 0;
+    font-size: 21px;
+}
+
+p {
+    margin: 0;
+    font-size: 15px;
+}
+
+p[primary] {
+    margin: 0;
+    font-size: 18px;
+    color: var(--on-popup-bg);
+    font-weight: var(--font-weight-regular);
+    font-family: 'Figtree', 'MiSans';
+}
+
+p[content] {
+    margin: 0;
+    font-size: 14px;
+    color: var(--on-popup-card-bg);
+    font-weight: var(--font-weight-regular);
+    font-family: 'Figtree', 'MiSans';
+}
+
+p[sec-main] {
+    margin: 0;
+    font-size: 15px;
+    color: var(--on-popup-bg);
+    font-weight: var(--font-weight-regular);
+    font-family: 'Figtree';
+}
+
+p[sec] {
+    margin: 0;
+    font-size: 15px;
+    color: var(--on-popup-card-bg);
+    font-weight: calc(var(--font-weight-regular) - 50);
+    font-family: 'MiSans';
+    text-align: center;
+}
+
+p[sec-content] {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.8;
+    color: var(--on-popup-card-bg);
+    font-weight: calc(var(--font-weight-regular) - 50);
+    font-family: 'MiSans';
+    text-align: center;
+}
+
+.cardNameBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cardName {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+}
+
+.secName {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+    width: 300px;
+}
+
+.userName {
+    margin: 0;
+    font-size: 15px;
+    color: var(--on-popup-card-bg);
+    font-weight: calc(var(--font-weight-regular) - 50);
+    font-family: 'MiSans';
+    text-align: center;
+    background-color: var(--popup-card-bg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    padding-right: 8px;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.userName:hover {
+    transform: scale(0.95);
+}
+
+.userNameBox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+}
+
+.line {
+    height: 1px;
+    width: 312px;
+    background: var(--on-popup-card-bg);
+    opacity: 0.2;
 }
