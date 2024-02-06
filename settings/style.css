@@ -21,7 +21,7 @@
 
 #BackIcon {
     position: fixed;
-    top: 14px;
+    top: 16px;
     left: 20px;
     z-index: 25;
 
@@ -52,9 +52,8 @@ body {
     box-sizing: border-box;
     margin: 48px 14px 14px 14px;
     margin-top: 48px;
-    background: var(--popup-bg);
     user-select: none;
-    width: 326px;
+    width: 100%;
     gap: 10px;
     overflow: scroll;
     scrollbar-width: none;
@@ -65,7 +64,8 @@ body {
     flex-direction: column;
     align-items: center;
     height: 256px;
-    width: 326px;
+    width: calc(100% - 28px);
+    box-sizing: border-box;
     justify-content: center;
     gap: 16px;
 
@@ -107,13 +107,13 @@ header {
     justify-content: center;
     gap: 16px;
     padding: 14px;
-    width: -webkit-fill-available;
+    width: 100%;
+    box-sizing: border-box;
     backdrop-filter: blur(24px);
     position: fixed;
     z-index: 20;
     top: 0;
     left: 0;
-    width: 326px;
     background: var(--popup-header-bg);
 
     p2 {
@@ -123,7 +123,7 @@ header {
         font-family: 'MiSans';
         margin: 0;
         transform-origin: 0 20px;
-        animation: header-animate-it cubic-bezier(0.5, -0.25, 0.5, 1.25);
+        animation: header-animate-it ease-in;
         animation-timeline: scroll(nearest block);
         animation-range-start: 0%;
         animation-range-end: 55%;
@@ -136,10 +136,10 @@ header {
         font-family: 'MiSans';
         margin: 0;
         transform-origin: 0 20px;
-        animation: header-animate-it cubic-bezier(0.5, -0.25, 0.5, 1.25);
+        animation: header-animate-it ease-in;
         animation-timeline: scroll(nearest block);
         animation-range-start: 0%;
-        animation-range-end: 30%;
+        animation-range-end: 25%;
     }
 }
 
@@ -148,13 +148,15 @@ header {
     flex-direction: column;
     gap: 10px;
     box-sizing: border-box;
+    width: calc(100% - 28px);
 }
 
 .card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
+    width: 100%;
+    box-sizing: border-box;
     color: var(--on-popup-bg);
     font-weight: var(--font-weight-regular);
     font-family: 'Figtree', 'MiSans';
@@ -215,7 +217,6 @@ p[content] {
 p[sec-main] {
     margin: 0;
     font-size: 15px;
-    color: var(--on-popup-bg);
     font-weight: var(--font-weight-regular);
     font-family: 'Figtree';
 }
@@ -252,12 +253,16 @@ p[sec-content] {
 
 }
 
+footer {
+    width: calc(100% - 28px);
+}
+
 .secName {
     display: flex;
     flex-direction: column;
     gap: 6px;
     padding: 14px;
-    width: 300px;
+    width: calc(100% - 28px);
 }
 
 .userName {
@@ -274,11 +279,25 @@ p[sec-content] {
     border-radius: 24px;
     padding-right: 8px;
     transform: scale(1);
-    transition: all .2s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: var(--on-popup-bg);
+
+    img {
+        border-radius: 24px;
+        transform: scale(1);
+        transition: all .6s ease-in-out;
+    }
 }
 
 .userName:hover {
     transform: scale(0.95);
+    background-color: #48877F;
+    color: #FFFFFF;
+
+    img {
+        border-radius: 24px;
+        transform: scale(0.75);
+    }
 }
 
 .userNameBox {
@@ -290,7 +309,7 @@ p[sec-content] {
 
 .line {
     height: 1px;
-    width: 312px;
+    width: calc(100% - 28px);
     background: var(--on-popup-card-bg);
     opacity: 0.2;
 }

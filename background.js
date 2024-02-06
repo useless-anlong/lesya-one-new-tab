@@ -89,120 +89,135 @@ window.onload = function () {
     }
     fnCreatClock();
 
-    function getNetworkOnLineChange() {
+
+    updateText("n", window.navigator.onLine);
+
+    window.addEventListener("online", function () {
         updateText("n", window.navigator.onLine);
+    });
 
-        window.addEventListener("online", function () {
-            updateText("n", window.navigator.onLine);
-        });
-
-        window.addEventListener("offline", function () {
-            updateText("n", window.navigator.onLine);
-        });
-    }
+    window.addEventListener("offline", function () {
+        updateText("n", window.navigator.onLine);
+    });
 
     function updateText(id, msg) {
         document.getElementById(id).textContent = msg;
         console.log(msg);
     }
 
-    const ContextMenu = function (options) {
-        let instance;
+    // const ContextMenu = function (options) {
+    //     let instance;
 
-        function createMenu() {
-            const ul = document.createElement("ul");
-            ul.classList.add("custom-context-menu");
-            const { menus } = options;
-            const menuOpenAnim = [
-                { transform: "rotate(0) scale(1)" },
-                { transform: "rotate(360deg) scale(0)" },
-            ];
+    //     function createMenu() {
+    //         const ul = document.createElement("ul");
+    //         ul.classList.add("custom-context-menu");
+    //         const { menus } = options;
+    //         const menuOpenAnim = [
+    //             { transform: "rotate(0) scale(1)" },
+    //             { transform: "rotate(360deg) scale(0)" },
+    //         ];
 
-            const menuOpenTiming = {
-                duration: 2000,
-                iterations: 1,
-            };
-            if (menus && menus.length > 0) {
-                for (let menu of menus) {
-                    const li = document.createElement("li");
-                    li.textContent = menu.name;
-                    li.onclick = menu.onClick;
-                    ul.animate(menuOpenAnim, menuOpenTiming);
-                    ul.appendChild(li);
-                }
-            }
-            const body = document.querySelector("body");
-            body.appendChild(ul);
-            return ul;
-        }
+    //         const menuOpenTiming = {
+    //             duration: 2000,
+    //             iterations: 1,
+    //         };
+    //         if (menus && menus.length > 0) {
+    //             for (let menu of menus) {
+    //                 const li = document.createElement("li");
+    //                 li.textContent = menu.name;
+    //                 li.onclick = menu.onClick;
+    //                 ul.animate(menuOpenAnim, menuOpenTiming);
+    //                 ul.appendChild(li);
+    //             }
+    //         }
+    //         const body = document.querySelector("body");
+    //         body.appendChild(ul);
+    //         return ul;
+    //     }
 
-        return {
-            getInstance: function () {
-                if (!instance) {
-                    instance = createMenu();
-                }
-                return instance;
-            },
-        };
-    };
+    //     return {
+    //         getInstance: function () {
+    //             if (!instance) {
+    //                 instance = createMenu();
+    //             }
+    //             return instance;
+    //         },
+    //     };
+    // };
 
-    const contextMenu = ContextMenu({
-        menus: [
-            {
-                name: "通用设置",
-                onClick: function (e) {
-                    console.log("settings clicked");
-                },
-            },
-            {
-                name: "搜索引擎偏好",
-                onClick: function (e) {
-                    console.log("search-settings clicked");
-                },
-            },
-            {
-                name: "管理快捷菜单栏",
-                onClick: function (e) {
-                    console.log("menu-setting clicked");
-                },
-            },
-            {
-                name: "关于 Silent Start",
-                onClick: function (e) {
-                    console.log("about clicked");
-                },
-            },
-            {
-                name: "帮助与支持",
-                onClick: function (e) {
-                    console.log("help clicked");
-                },
-            },
-        ],
-    });
+    // const contextMenu = ContextMenu({
+    //     menus: [
+    //         {
+    //             name: "通用设置",
+    //             onClick: function (e) {
+    //                 console.log("settings clicked");
+    //             },
+    //         },
+    //         {
+    //             name: "搜索引擎偏好",
+    //             onClick: function (e) {
+    //                 console.log("search-settings clicked");
+    //             },
+    //         },
+    //         {
+    //             name: "管理快捷菜单栏",
+    //             onClick: function (e) {
+    //                 console.log("menu-setting clicked");
+    //             },
+    //         },
+    //         {
+    //             name: "关于 Silent Start",
+    //             onClick: function (e) {
+    //                 console.log("about clicked");
+    //             },
+    //         },
+    //         {
+    //             name: "帮助与支持",
+    //             onClick: function (e) {
+    //                 console.log("help clicked");
+    //             },
+    //         },
+    //     ],
+    // });
 
-    function showMenu(e) {
+    // function showMenu(e) {
+    //     e.preventDefault();
+    //     const menus = contextMenu.getInstance();
+    //     menus.style.top = `${e.clientY}px`;
+    //     menus.style.left = `${e.clientX}px`;
+    //     menus.classList.remove("hidden");
+    // }
+
+    // function hideMenu(event) {
+    //     const menus = contextMenu.getInstance();
+    //     menus.classList.add("hidden");
+    // }
+
+    // document.addEventListener("contextmenu", showMenu);
+    // document.addEventListener("click", hideMenu);
+
+    // var t = document.getElementById("text");
+
+    // function fun() {
+    //     t.submit()
+    //     // t.reset();
+    //     alert(t.value);
+    //     return false;
+    // };
+
+    document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
-        const menus = contextMenu.getInstance();
-        menus.style.top = `${e.clientY}px`;
-        menus.style.left = `${e.clientX}px`;
-        menus.classList.remove("hidden");
-    }
+    })
 
-    function hideMenu(event) {
-        const menus = contextMenu.getInstance();
-        menus.classList.add("hidden");
-    }
+    var frame = document.getElementById("settings");
 
-    document.addEventListener("contextmenu", showMenu);
-    document.addEventListener("click", hideMenu);
-
-    var t = document.getElementById("text");
-
-    function fun() {
-        t.submit()
-        // t.reset();
-        alert(t.value);
-        return false;
-    };
+    window.addEventListener(
+        "message",
+        function (ev) {
+            var data = ev.data;
+            console.log(`get(`, data, `)`);
+            window.location.href = "https://github.com/useless-anlong/";
+        },
+        false
+    );
 }

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" /> -->
     <title>Silent Start</title>
     <link rel="stylesheet" type="text/css" href="./style/clock.css">
+    <link rel="stylesheet" type="text/css" href="./style/dialog.css">
     <link rel="stylesheet" type="text/css" href="./style/search.css">
     <link rel="stylesheet" type="text/css" href="./style/univar.css">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
@@ -93,6 +94,29 @@
             <span id="n"></span>
         </div>
     </div>
+    <button onclick="document.querySelector('dialog').showModal()">Open Dialog</button>
+    <dialog>
+        <form method="dialog">
+            <button id="HideDialog">
+                <svg width="20" height="18" viewBox="0 0 48 48" fill="none">
+                    <g opacity="1" transform="translate(0 0)">
+                        <mask id="bg-mask-0" fill="white">
+                            <use transform="translate(0 0)" xlink:href="#path_0"></use>
+                        </mask>
+                        <g mask="url(#bg-mask-0)">
+                            <path id="icon" fill-rule="evenodd"
+                                d="M42.0006 20C43.1052 20 44.0006 20.8954 44.0006 22C44.0006 23.1046 43.1052 24 42.0006 24L30.0002 24C26.6864 24 24.0001 21.3136 24.0002 17.9998L24.0005 6L24.0005 5.9999C24.0006 4.8954 24.896 4 26.0005 4C27.1051 4 28.0005 4.8954 28.0005 6L28.0005 6.0001L28.0002 17.9999C28.0001 19.1045 28.8956 20 30.0002 20L42.0006 20ZM6 28C4.89543 28 4 27.1046 4 26C4 24.8954 4.89543 24 6 24L18.0004 24C21.3142 24 24.0005 26.6864 24.0004 30.0002L24.0001 42L24.0001 42.0001C24 43.1046 23.1046 44 22.0001 44C20.8955 44 20.0001 43.1046 20.0001 42L20.0001 41.9999L20.0004 30.0001C20.0005 28.8955 19.105 28 18.0004 28L6 28Z">
+                            </path>
+                        </g>
+                    </g>
+                    <defs>
+                        <rect id="path_0" x="0" y="0" width="48" height="48" rx="0" ry="0" />
+                    </defs>
+                </svg>
+            </button>
+        </form>
+        <iframe src="./settings/index.html" id="settings"></iframe>
+    </dialog>
     <script src="background.js"></script>
 </body>
 

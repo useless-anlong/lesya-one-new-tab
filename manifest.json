@@ -22,7 +22,7 @@
             "48": "popup/icons/48.png",
             "128": "popup/icons/128.png"
         },
-        "default_popup": "popup/index.html",
+        
         "default_title": "轻起始 · 扩展配置工具"
     },
     "chrome_url_overrides": {

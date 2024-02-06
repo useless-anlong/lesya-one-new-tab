@@ -1,0 +1,85 @@
+form[method="dialog"] {
+    display: flex;
+    margin-top: 0;
+    margin-block-end: 0;
+    position: fixed;
+}
+
+#HideDialog {
+    appearance: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: unset;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    z-index: 25;
+
+    #icon {
+        fill: var(--on-popup-bg);
+    }
+}
+
+#HideDialog:hover {
+    #icon {
+        fill: var(--on-popup-card-bg);
+    }
+}
+
+dialog[open] {
+    bottom: 32px;
+    /* translate: 0 100vh; */
+    opacity: 1;
+}
+
+dialog {
+    transition: opacity .25s ease-in-out, bottom .35s ease-in-out, overlay .5s ease-in-out, display .25s ease-in-out allow-discrete;
+    /* translate: 0 100vh; */
+    bottom: -72px;
+    opacity: 0;
+}
+
+@starting-style {
+
+    dialog[open] {
+        bottom: -72px;
+        /* translate: 0 100vh; */
+        opacity: 0;
+    }
+}
+
+dialog:modal {
+    overlay: auto !important;
+}
+
+dialog:-internal-dialog-in-top-layer {
+    border-radius: 12px;
+    border: none;
+    background: var(--popup-bg);
+    box-shadow: 0px 2px 6px 2px #00000034;
+    width: 512px;
+    height: 424px;
+    backdrop-filter: blur(14px);
+    padding: 0;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: none;
+}
