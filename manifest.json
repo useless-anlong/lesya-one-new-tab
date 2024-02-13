@@ -1,5 +1,5 @@
 {
-    "name": "Silent Start · 轻起始",
+    "name": "Silent Start",
     "version": "0.0.0.1",
     "manifest_version": 3,
     "description": "一款极致简约的新标签页。",
@@ -11,7 +11,6 @@
     },
     "background": {
         "service_worker": "background.js"
-        "persistent": false
     },
     "action": {
         "default_icons": {
@@ -21,12 +20,12 @@
             "128": "popup/icons/128.png"
         },
         
-        "default_title": "轻起始 · 扩展配置工具"
+        "default_title": "Silent Start"
     },
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
     "chrome_settings_overrides": {
-        "homepage": "https://useless-anlong.github.io/silent-start/"
+        "homepage": "https://silentstart.cn/"
     }
 }
