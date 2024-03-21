@@ -17,12 +17,11 @@
 ![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=firefoxbrowser&logoColor=%23FFFFFF&label=FireFox&labelColor=%23FF7139&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
 
 
-
 </div>
 
 
 <details>
-<summary align="center"> 功能列表</summary>
+<summary> 功能列表</summary>
     
 - [ ] 欢迎向导 [#4](https://github.com/useless-anlong/silent-start/issues/4)
 - [ ] 时钟与日期 [#5](https://github.com/useless-anlong/silent-start/issues/5)
@@ -32,11 +31,7 @@
 - [ ] 问候语与天气 [#9](https://github.com/useless-anlong/silent-start/issues/9)
 - [ ] 设置、帮助、关于 [#10](https://github.com/useless-anlong/silent-start/issues/10)
 
-<p align="center">本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。</p>
-
 </details>
-
----
 
 ## 怎么使用
 
@@ -52,7 +47,7 @@
 
 或者是：[在线版](https://silentstart.cn)
 
----
-
 [支持我继续开发](https://afdian.net/a/useless-anlong)
+
+本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。
 
