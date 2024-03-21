@@ -36,14 +36,23 @@
 
 </details>
 
-  
+---
 
-<div align="center">
+## 怎么使用
 
-<h2>
-<img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-primary.png" width="32px">
-</h2>
+1. 下载源代码压缩包 / 下载最新的release
+2. 解压压缩包
+3. 打开浏览器扩展页面 | [Edge](edge://extensions/) / [Chrome](chrome://extensions/)
+4. 勾选开发人员模式（开发者模式）并刷新页面
+5. 轻点“加载已解压的扩展程序”
+6. 选择已解压的文件夹
+7. 按照浏览器指引同意扩展程序控制你的新标签页
 
-[简体中文](https://github.com/useless-anlong/silent-start/README.md) \ [ENGLISH](https://github.com/useless-anlong/silent-start/README/en_README.md)
-    
-</div>
+注：如有其他新标签页扩展，需要先卸载或禁用
+
+或者是：[在线版](https://silentstart.cn)
+
+---
+
+[支持我继续开发](https://afdian.net/a/useless-anlong)
+
