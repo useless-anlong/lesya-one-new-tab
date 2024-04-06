@@ -1,16 +1,16 @@
 @font-face {
-    font-family: Figtree;
-    src: url(./fonts/Figtree-VF.ttf);
+    font-family: RbsLig;
+    src: url(./fonts/RebyteSans-Light.woff2);
+}
+
+@font-face {
+    font-family: RbsReg;
+    src: url(./fonts/RebyteSans-Regular.woff2);
 }
 
 @font-face {
     font-family: MiSans;
     src: url(./fonts/MiSans-VF.ttf);
-}
-
-@font-face {
-    font-family: BalooDa;
-    src: url(./fonts/BalooDa2-VF.ttf);
 }
 
 @font-face {
@@ -37,6 +37,7 @@
         --font-weight-light: 350;
         --font-weight-regular: 450;
     }
+
 }
 
 @media (prefers-color-scheme: dark) {

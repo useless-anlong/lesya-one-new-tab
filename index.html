@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" /> -->
-    <title>Silent Start</title>
+    <title>新标签页</title>
     <link rel="stylesheet" type="text/css" href="./style/clock.css">
     <link rel="stylesheet" type="text/css" href="./style/dialog.css">
     <link rel="stylesheet" type="text/css" href="./style/search.css">
@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="stylesheet" type="text/css" href="./style/menu.css">
     <link rel="stylesheet" type="text/css" href="./style/quickstart.css">
-    <link rel="icon" href="./README/logo-primary.png">
+    <link data-color-theme="dark_colorblind" rel="icon" href="./popup/icons/mono_128_dark.svg">
+    <link data-color-theme="light_colorblind" rel="icon" href="./popup/icons/mono_128_light.svg">
 </head>
 
 <body>
@@ -23,11 +24,11 @@
         <!-- <div id="date"> -->
         <div id="dateBox">
             <div id="month" class="datetext"></div>
-            <span class="datetextCN">月</span>
+            <span class="datetext">月</span>
             <div id="date" class="datetext"></div>
-            <span class="datetextCN">日</span>
+            <span class="datetext">日</span>
 
-            <div id="weekday" class="datetextCN">
+            <div id="weekday" class="datetext">
                 <script src="getweekday.js">
                 </script>
             </div>
@@ -39,38 +40,6 @@
         </div>
     </div>
     <div id="main">
-        <div id="quickstart">
-            <li class="startBtn">
-                <div class="startBtnName" id="na01">关于 Silent Start</div>
-                <div class="startBtnIcon" id="ic01">
-                    <img src="./README/logo-primary.png" height="22" width="22">
-                </div>
-            </li>
-            <li class="startBtn">
-                <div class="startBtnName" id="na01">关于 Silent Start</div>
-                <div class="startBtnIcon" id="ic01">
-                    <img src="./README/logo-primary.png" height="22" width="22">
-                </div>
-            </li>
-            <li class="startBtn">
-                <div class="startBtnName" id="na01">关于 Silent Start</div>
-                <div class="startBtnIcon" id="ic01">
-                    <img src="./README/logo-primary.png" height="22" width="22">
-                </div>
-            </li>
-            <li class="startBtn">
-                <div class="startBtnName" id="na01">关于 Silent Start</div>
-                <div class="startBtnIcon" id="ic01">
-                    <img src="./README/logo-primary.png" height="22" width="22">
-                </div>
-            </li>
-            <li class="startBtn">
-                <div class="startBtnName" id="na01">关于 Silent Start</div>
-                <div class="startBtnIcon" id="ic01">
-                    <img src="./README/logo-primary.png" height="22" width="22">
-                </div>
-            </li>
-        </div>
         <div id="search">
             <input type="checkbox" id="searchBarHover">
             <label for="searchBarHover" id="searchBox">搜索</label>
