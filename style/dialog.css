@@ -52,13 +52,10 @@ dialog {
     opacity: 0;
 }
 
-@starting-style {
-
-    dialog[open] {
-        bottom: -72px;
-        /* translate: 0 100vh; */
-        opacity: 0;
-    }
+dialog[open] {
+    bottom: -72px;
+    /* translate: 0 100vh; */
+    opacity: 0;
 }
 
 dialog:modal {
@@ -74,6 +71,12 @@ dialog:-internal-dialog-in-top-layer {
     height: 424px;
     backdrop-filter: blur(14px);
     padding: 0;
+    user-select: none;
+}
+
+::backdrop {
+    backdrop-filter: blur(9px);
+    background: #00000030;
 }
 
 iframe {

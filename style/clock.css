@@ -1,6 +1,6 @@
 #time {
     user-select: none;
-    font-family: 'RbsLig';
+    font-family: 'Wix Madefor Display';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,12 +19,13 @@
     display: flex;
     gap: 1px;
     align-items: center;
-    line-height: 86px;
-    font-weight: 450;
-    font-size: 82px;
-    font-family: 'RbsLig';
+    line-height: 96px;
+    font-weight: 700;
+    font-size: 108px;
+    font-family: 'Wix Madefor Display';
     margin: 0;
-    color: #ffffffc5;
+    color: #ffffff;
+    flex-direction: column;
 }
 
 /* .clocktext {
@@ -38,7 +39,7 @@
 } */
 
 .datetext {
-    font-family: 'RbsReg';
+    font-family: 'MiSans';
     font-size: 17px;
     font-weight: 400;
     display: flex;

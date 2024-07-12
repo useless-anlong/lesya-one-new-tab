@@ -209,15 +209,15 @@ window.onload = function () {
         e.preventDefault();
     })
 
-    var frame = document.getElementById("settings");
+    // var frame = document.getElementById("settings");
 
-    window.addEventListener(
-        "message",
-        function (ev) {
-            var data = ev.data;
-            console.log(`get(`, data, `)`);
-            window.location.href = "https://github.com/useless-anlong/";
-        },
-        false
-    );
+    // window.addEventListener(
+    //     "message",
+    //     function (ev) {
+    //         var data = ev.data;
+    //         console.log(`get(`, data, `)`);
+    //         window.location.href = "https://github.com/useless-anlong/";
+    //     },
+    //     false
+    // );
 }

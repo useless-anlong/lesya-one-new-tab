@@ -1,11 +1,11 @@
 @font-face {
-    font-family: RbsLig;
-    src: url(./fonts/RebyteSans-Light.woff2);
+    font-family: Wix Madefor Display;
+    src: url(./fonts/WixMadeforDisplay.ttf);
 }
 
 @font-face {
-    font-family: RbsReg;
-    src: url(./fonts/RebyteSans-Regular.woff2);
+    font-family: DM Sans;
+    src: url(./fonts/DMSans.ttf);
 }
 
 @font-face {
