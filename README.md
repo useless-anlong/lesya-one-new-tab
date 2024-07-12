@@ -1,16 +1,3 @@
-<div align="center">
-<picture>
-    <img src="https://github.com/useless-anlong/silent-start/blob/main/README/preview.png" width="85%" min-width="384px" align="center">
-</picture><br> 
-<picture>
-    <source media="(perfers-color-scheme: dark)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-dark.png" width="284px" align="center">
-    <source media="(perfers-color-scheme: light)" srcset="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-light.png" width="284px" align="center">
-    <img src="https://github.com/useless-anlong/silent-start/blob/main/README/logo-text-primary.png" width="284px" align="center">
-</picture>
-    <h2>一个极致简约的浏览器起始页，聚焦于搜索，享受于浏览。</h2>
-
-由@useless-anlong 呈现
-
 ![Static Badge](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%89%88%E6%9C%AC-DB255A?style=for-the-badge&link=https%3A%2F%2Fsilentstart.cn)
 ![Static Badge](https://img.shields.io/badge/EDGE-%230DD3D6?style=for-the-badge&logo=microsoftedge&logoColor=%23FFFFFF)
 ![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=googlechrome&logoColor=%23FFFFFF&label=Chrome&labelColor=%234285F4&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
@@ -50,4 +37,3 @@
 [支持我继续开发](https://afdian.net/a/useless-anlong)
 
 本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。
-
