@@ -71,29 +71,23 @@ window.onload = function () {
         e.preventDefault();
     })
 
-    window.addEventListener('online', function () {
-        const img = document.getElementById('net').querySelector('img');
-        img.src = './sources/net.svg';
-    });
-
-    window.addEventListener('offline', function () {
-        const img = document.getElementById('net').querySelector('img');
-        img.src = './sources/NoInternet.svg';
-    });
-
     let main = document.querySelector('main');
     main.style.opacity = '1';
     main.style.filter = 'blur(0px)';
 
-    const connectedIcon = document.querySelector('.connectIcon')
-    let connectStatus = window.navigator.onLine
-
-    if (connectStatus = 'true') {
+    if (navigator.onLine) {
         connectedIcon.src = './sources/connected.svg';
     } else {
         connectedIcon.src = './sources/disconnected.svg';
     }
 }
+const connectedIcon = document.querySelector('.connectIcon')
+window.addEventListener('online', function () {
+    connectedIcon.src = './sources/connected.svg';
+});
+window.addEventListener('offline', function () {
+    connectedIcon.src = './sources/disconnected.svg';
+});
 
 let consoleText =
     ":::.\n" +
