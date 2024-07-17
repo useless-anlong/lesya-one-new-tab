@@ -1,7 +1,6 @@
 ![Static Badge](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%89%88%E6%9C%AC-DB255A?style=for-the-badge&link=https%3A%2F%2Fsilentstart.cn)
-![Static Badge](https://img.shields.io/badge/EDGE-%230DD3D6?style=for-the-badge&logo=microsoftedge&logoColor=%23FFFFFF)
 ![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=googlechrome&logoColor=%23FFFFFF&label=Chrome&labelColor=%234285F4&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
-![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=firefoxbrowser&logoColor=%23FFFFFF&label=FireFox&labelColor=%23FF7139&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
+![Static Badge](https://img.shields.io/badge/%E6%89%A9%E5%B1%95-DB255A?style=for-the-badge&logo=microsoftedge&logoColor=%23FFFFFF&label=FireFox&labelColor=%23FF7139&color=%23222222&link=https%3A%2F%2Fsilentstart.cn)
 
 
 </div>
@@ -24,7 +23,9 @@
 
 1. 下载源代码压缩包 / 下载最新的release
 2. 解压压缩包
-3. 打开浏览器扩展页面 | [Edge](edge://extensions/) / [Chrome](chrome://extensions/)
+3. 打开浏览器扩展页面 
+   Edge `edge://extensions/`
+   Chrome `chrome://extensions/`
 4. 勾选开发人员模式（开发者模式）并刷新页面
 5. 轻点“加载已解压的扩展程序”
 6. 选择已解压的文件夹
@@ -32,8 +33,9 @@
 
 注：如有其他新标签页扩展，需要先卸载或禁用
 
-或者是：[在线版](https://silentstart.cn)
+或者是：[在线版](https://lesya.one)
 
 [支持我继续开发](https://afdian.net/a/useless-anlong)
+> 爱发电因部分原因可能无法正常访问，敬请谅解
 
 本项目仅为个人练习，以上功能不保证能完全实现，且本人无法保证能持续开发本项目。
