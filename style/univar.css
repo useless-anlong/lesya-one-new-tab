@@ -13,11 +13,6 @@
     src: url(./fonts/MiSans-VF.ttf);
 }
 
-@font-face {
-    font-family: SilentSymbol;
-    src: url(./fonts/silentsymbol-VF.ttf);
-}
-
 @media (prefers-color-scheme: light) {
     :root {
         --popup-bg: #f1f1f7;
@@ -38,12 +33,16 @@
         --font-weight-regular: 450;
     }
 
+    body {
+        background-color: #ffffff;
+    }
+
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --popup-bg: #141414;
-        --popup-header-bg:#141414b6;
+        --popup-header-bg: #141414b6;
         --popup-card-bg: #2b2b2b;
         --popup-card-hover-bg: #404040;
         --on-popup-bg: #ffffff;
@@ -59,4 +58,38 @@
         --font-weight-light: 250;
         --font-weight-regular: 350;
     }
+
+    body {
+        background-color: #242424;
+    }
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    filter: blur(100px);
+    opacity: 0;
+    transition: opacity .65s ease-in .25s, filter .75s ease-in-out 0s;
+    background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://api.kdcc.cn);
+    background-position: center;
+}
+
+.lefter button {
+    background: unset;
+    border: unset;
+    color: #FFFFFF;
+    opacity: 0.3;
+    padding: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+.lefter button:hover {
+    opacity: 1.0;
+}
+
+.lefterMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }

@@ -1,26 +1,4 @@
 window.onload = function () {
-    // //GET
-    // Date.prototype.format = function (fmt) {
-    //     var o = {
-    //         "y+": this.getFullYear, //YEAR
-    //         "M+": this.getMonth() + 1, //MONTH
-    //         "d+": this.getDate(), //DAY
-    //         "h+": this.getHours(), //HOUR
-    //         "m+": this.getMinutes(), //MINUTE
-    //         "s+": this.getSeconds(), //SECOND
-    //     };
-    //     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    //     for (var k in o)
-    //         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-    //     return fmt;
-    // }
-
-
-    // //INPUT
-    // setInterval("document.getElementById('date1').innerHTML = (new Date()).format('M');", 100);
-    // setInterval("document.getElementById('date2').innerHTML = (new Date()).format('d');", 100);
-    // setInterval("document.getElementById('clock1').innerHTML = (new Date()).format('hh');", 100);
-    // setInterval("document.getElementById('clock2').innerHTML = (new Date()).format('mm');", 100); 
     function fnCreatClock() {
         //声明时间相关变量
         var dLocal, nMonth, nDate, nHours, nMinutes;
@@ -89,135 +67,68 @@ window.onload = function () {
     }
     fnCreatClock();
 
-
-    updateText("n", window.navigator.onLine);
-
-    window.addEventListener("online", function () {
-        updateText("n", window.navigator.onLine);
-    });
-
-    window.addEventListener("offline", function () {
-        updateText("n", window.navigator.onLine);
-    });
-
-    function updateText(id, msg) {
-        document.getElementById(id).textContent = msg;
-        console.log(msg);
-    }
-
-    // const ContextMenu = function (options) {
-    //     let instance;
-
-    //     function createMenu() {
-    //         const ul = document.createElement("ul");
-    //         ul.classList.add("custom-context-menu");
-    //         const { menus } = options;
-    //         const menuOpenAnim = [
-    //             { transform: "rotate(0) scale(1)" },
-    //             { transform: "rotate(360deg) scale(0)" },
-    //         ];
-
-    //         const menuOpenTiming = {
-    //             duration: 2000,
-    //             iterations: 1,
-    //         };
-    //         if (menus && menus.length > 0) {
-    //             for (let menu of menus) {
-    //                 const li = document.createElement("li");
-    //                 li.textContent = menu.name;
-    //                 li.onclick = menu.onClick;
-    //                 ul.animate(menuOpenAnim, menuOpenTiming);
-    //                 ul.appendChild(li);
-    //             }
-    //         }
-    //         const body = document.querySelector("body");
-    //         body.appendChild(ul);
-    //         return ul;
-    //     }
-
-    //     return {
-    //         getInstance: function () {
-    //             if (!instance) {
-    //                 instance = createMenu();
-    //             }
-    //             return instance;
-    //         },
-    //     };
-    // };
-
-    // const contextMenu = ContextMenu({
-    //     menus: [
-    //         {
-    //             name: "通用设置",
-    //             onClick: function (e) {
-    //                 console.log("settings clicked");
-    //             },
-    //         },
-    //         {
-    //             name: "搜索引擎偏好",
-    //             onClick: function (e) {
-    //                 console.log("search-settings clicked");
-    //             },
-    //         },
-    //         {
-    //             name: "管理快捷菜单栏",
-    //             onClick: function (e) {
-    //                 console.log("menu-setting clicked");
-    //             },
-    //         },
-    //         {
-    //             name: "关于 Silent Start",
-    //             onClick: function (e) {
-    //                 console.log("about clicked");
-    //             },
-    //         },
-    //         {
-    //             name: "帮助与支持",
-    //             onClick: function (e) {
-    //                 console.log("help clicked");
-    //             },
-    //         },
-    //     ],
-    // });
-
-    // function showMenu(e) {
-    //     e.preventDefault();
-    //     const menus = contextMenu.getInstance();
-    //     menus.style.top = `${e.clientY}px`;
-    //     menus.style.left = `${e.clientX}px`;
-    //     menus.classList.remove("hidden");
-    // }
-
-    // function hideMenu(event) {
-    //     const menus = contextMenu.getInstance();
-    //     menus.classList.add("hidden");
-    // }
-
-    // document.addEventListener("contextmenu", showMenu);
-    // document.addEventListener("click", hideMenu);
-
-    // var t = document.getElementById("text");
-
-    // function fun() {
-    //     t.submit()
-    //     // t.reset();
-    //     alert(t.value);
-    //     return false;
-    // };
-
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     })
 
-    // var frame = document.getElementById("settings");
+    window.addEventListener('online', function () {
+        const img = document.getElementById('net').querySelector('img');
+        img.src = './sources/net.svg';
+    });
 
-    // window.addEventListener(
-    //     "message",
-    //     function (ev) {
-    //         var data = ev.data;
-    //         console.log(`get(`, data, `)`);
-    //         window.location.href = "https://github.com/useless-anlong/";
-    //     },
-    //     false
-    // );
+    window.addEventListener('offline', function () {
+        const img = document.getElementById('net').querySelector('img');
+        img.src = './sources/NoInternet.svg';
+    });
+
+    let main = document.querySelector('main');
+    main.style.opacity = '1';
+    main.style.filter = 'blur(0px)';
+
+    const connectedIcon = document.querySelector('.connectIcon')
+    let connectStatus = window.navigator.onLine
+
+    if (connectStatus = 'true') {
+        connectedIcon.src = './sources/connected.svg';
+    } else {
+        connectedIcon.src = './sources/disconnected.svg';
+    }
 }
+
+let consoleText =
+    ":::.\n" +
+    ":::.\n" +
+    ":::.        ..:::..         ..::::..     ....        ....     ..:::..  ...        ......         .   .....            ......\n" +
+    ":::.     .:::.....:::.    .::......:::.   :::.      .:::    ::::....::::::     .:..     .:.     .:...    ..:.      .:.     ..:.\n" +
+    ":::.    .::.       .::.  .:::              :::.    .:::   .:::        :::.    ::          .:    .:.        .:     :.          :.\n" +
+    ":::.    :::........::::   .:::::::..        :::.  .:::    :::.         ::.   .:            ::   .:          :.   .:. ........ ::\n" +
+    ":::     :::............       ....::::.      :::. :::     :::.        .::.   .:            ::   .:          :.   .:. .........\n" +
+    ":::.    .::.              .        .:::       ::::::       :::.      .:::.    ::          .:    .:          :.    :.\n" +
+    " .:::.   .:::::..::::.   .::::.....:::.        ::::         .::::..:::::::     .:.      .:.     .:          :.     .:.      ...\n" +
+    "    ..      .......         ....:...          .:::            .......  ...        .......        .          .        ........\n" +
+    "                                             .:::\n" +
+    "                                            .:::"
+console.log(consoleText);
+console.log('%cLesyaOne Start Page \n' +
+    '%cVersion 24w06v2 ', 'color: #7ACF9C; font-size: 18px;', 'color: #999')
+console.log("%cWelcome!", 'color: #8AC5DD; font-size: 18px; font-weight: bold');
+
+
+let settingsButton = document.querySelector('#set');
+let closeSettingsButton = document.querySelector('#closeSet');
+let settingsBackDrop = document.getElementById('settings');
+let settingsWindow = document.querySelector('.settingsMain');
+
+settingsButton.addEventListener('click', function () {
+    settingsBackDrop.style.opacity = '1';
+    settingsBackDrop.style.transform = 'scaleY(1)';
+    settingsWindow.style.marginTop = '0%';
+    settingsWindow.style.opacity = '1';
+});
+
+closeSettingsButton.addEventListener('click', function () {
+    settingsBackDrop.style.opacity = '0';
+    settingsBackDrop.style.transform = 'scaleY(0)';
+    settingsWindow.style.marginTop = '100%';
+    settingsWindow.style.opacity = '0';
+});

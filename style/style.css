@@ -8,10 +8,36 @@ body {
     overflow: hidden;
     box-sizing: border-box;
     margin: 0;
-    background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://api.paugram.com/bing/);
+    /* background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://api.paugram.com/bing/);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     user-select: none;
+}
+
+.background {
+    position: fixed;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    transition: all 1s ease-in-out 0.5s;
+    /* opacity: 0; */
+}
+
+.background span {
+    background: radial-gradient(50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    height: 100%;
+    display: block;
+    width: 100%;
+    position: fixed;
+}
+
+.background img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    width: 100%;
+    height: 100%;
 }
 
 /* p {
@@ -92,4 +118,127 @@ header span svg path {
     display: flex;
     gap: 10px;
     margin-top: -1px;
+}
+
+.lefter {
+    height: calc(100% - 12px);
+    position: fixed;
+    padding: 6px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.loader {
+    position: fixed;
+    width: 40px;
+    align-self: center;
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+    transition: all .3s ease-in-out;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+.circular {
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    /* stroke: rgba(255, 255, 255, 0.5); */
+    stroke: #80E7A9;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: square;
+    animation-delay: 1s;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+.lefter li svg path {
+    fill: rgba(255, 255, 255, 0.5);
+    transition: all .25s ease-in-out;
+}
+
+.lefter li p {
+    margin: 0;
+    width: 0;
+    height: 19px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .25s ease-in-out;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.lefter li {
+    display: flex;
+    align-items: center;
+    font-family: 'MiSans';
+    font-weight: var(--font-weight-regular);
+    gap: 0px;
+    /* padding: 12px 14px; */
+    /* background-color: rgba(255, 255, 255, 0); */
+    /* backdrop-filter: blur(0px); */
+    /* border-radius: 8px; */
+}
+
+.lefter:hover li svg path {
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.lefter:hover li p {
+    width: 28px;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.lefter li:hover svg path {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.lefter li:hover p {
+    width: 28px;
+    opacity: 1;
+    color: rgba(255, 255, 255, 1)
+}
+
+#searchBox:hover .lefter li {
+    gap: 12px;
 }
