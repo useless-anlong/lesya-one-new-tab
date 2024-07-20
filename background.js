@@ -1,3 +1,5 @@
+let disconnectWarnWindow = document.querySelector('#disconnectWarn')
+
 window.onload = function () {
     function fnCreatClock() {
         //声明时间相关变量
@@ -77,17 +79,12 @@ window.onload = function () {
 
     if (navigator.onLine) {
         connectedIcon.src = './sources/connected.svg';
+        disconnectWarnWindow.style.transform = 'scale(0)';
     } else {
         connectedIcon.src = './sources/disconnected.svg';
+        disconnectWarnWindow.style.transform = 'scale(1)';
     }
 }
-const connectedIcon = document.querySelector('.connectIcon')
-window.addEventListener('online', function () {
-    connectedIcon.src = './sources/connected.svg';
-});
-window.addEventListener('offline', function () {
-    connectedIcon.src = './sources/disconnected.svg';
-});
 
 let consoleText =
     ":::.\n" +
@@ -112,6 +109,9 @@ let settingsButton = document.querySelector('#set');
 let closeSettingsButton = document.querySelector('#closeSet');
 let settingsBackDrop = document.getElementById('settings');
 let settingsWindow = document.querySelector('.settingsMain');
+let searchPage = document.querySelector('#searchPage');
+let closeSearchPage = document.querySelector('#closeSearch');
+let searchButton = document.querySelector('#sear');
 
 settingsButton.addEventListener('click', function () {
     settingsBackDrop.style.opacity = '1';
@@ -126,3 +126,121 @@ closeSettingsButton.addEventListener('click', function () {
     settingsWindow.style.marginTop = '100%';
     settingsWindow.style.opacity = '0';
 });
+
+function opensearch() {
+    searchPage.style.opacity = '1';
+    searchPage.style.transform = 'scale(1)';
+}
+
+searchButton.addEventListener('click', function () {
+    opensearch()
+});
+
+closeSearchPage.addEventListener('click', function () {
+    searchPage.style.opacity = '0';
+    searchPage.style.transform = 'scale(0)';
+});
+
+const connectedIcon = document.querySelector('.connectIcon');
+window.addEventListener('online', function () {
+    connectedIcon.src = './sources/connected.svg';
+    console.log("Internet Connected");
+    let connectedTips = document.createElement('div');
+    let connectedTipsIcon = document.createElement('img');
+    let connectedTipsText = document.createElement('p');
+
+    connectedTipsText.textContent = '已连接至 Internet';
+    connectedTipsIcon.src = './sources/animate/light/connected.svg';
+
+    connectedTips.appendChild(connectedTipsIcon);
+    connectedTips.appendChild(connectedTipsText);
+    document.body.appendChild(connectedTips);
+    connectedTips.classList.add('connectTips');
+    setTimeout(() => {
+        // connectedTips.removeChild(connectedTipsIcon);
+        document.body.removeChild(connectedTips);
+    }, 6000);
+});
+window.addEventListener('offline', function () {
+    connectedIcon.src = './sources/connected.svg';
+    console.log("Internet Connected");
+    let connectedTips = document.createElement('div');
+    let connectedTipsIcon = document.createElement('img');
+    let connectedTipsText = document.createElement('p');
+
+    connectedTipsText.textContent = 'Internet 连接被断开';
+    connectedTipsIcon.src = './sources/animate/light/disconnect.svg';
+
+    connectedTips.appendChild(connectedTipsIcon);
+    connectedTips.appendChild(connectedTipsText);
+    document.body.appendChild(connectedTips);
+    connectedTips.classList.add('disconnectTips');
+    setTimeout(() => {
+        // connectedTips.removeChild(connectedTipsIcon);
+        document.body.removeChild(connectedTips);
+    }, 6000);
+});
+
+document.addEventListener('keydown', function (event) {
+    // 假设要监听 Ctrl + Enter 组合键
+    if ((event.key === 'Enter' || event.key === 'NumpadEnter') && (navigator.platform.match("mac") ? event.metaKey : event.ctrlKey)) {
+        // 这里编写要执行的函数
+        opensearch()
+    }
+});
+
+let EnterBtn = document.querySelector('.tips');
+EnterBtn.addEventListener('click', function () {
+    let event = document.createEvent('Event');
+    event.initEvent('keyup', true, false);
+    event = Object.assign(event, {
+        ctrlKey: false,
+        metaKey: false,
+        altKey: false,
+        which: 13,
+        keyCode: 13,
+        key: 'Enter',
+        code: 'Enter'
+    })
+
+    let input = document.querySelector("input");
+    input.dispatchEvent(event);
+});
+
+let closeWindowBtn = document.querySelector('.closeWindow');
+
+closeWindowBtn.addEventListener('click', function () {
+    disconnectWarnWindow.style.transform = 'scale(0)';
+})
+
+// 获取按钮列表和第一个按钮
+var buttonList = document.getElementById('buttonList');
+var buttons = buttonList.getElementsByTagName('button');
+var currentIndex = 0;
+
+// 为文档添加键盘按下事件监听器
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode === 38) { // 上方向键
+        // 如果不是第一个按钮，将当前按钮的样式恢复，并将上一个按钮设为选中样式
+        if (currentIndex > 0) {
+            buttons[currentIndex].style.backgroundColor = '';
+            buttons[currentIndex].style.opacity = '0.45';
+            currentIndex--;
+            buttons[currentIndex].style.backgroundColor = 'var(--search-button-bg)';
+            buttons[currentIndex].style.opacity = '0.75';
+        }
+    } else if (event.keyCode === 40) { // 下方向键
+        // 如果不是最后一个按钮，将当前按钮的样式恢复，并将下一个按钮设为选中样式
+        if (currentIndex < buttons.length - 1) {
+            buttons[currentIndex].style.backgroundColor = '';
+            buttons[currentIndex].style.opacity = '0.45';
+            currentIndex++;
+            buttons[currentIndex].style.backgroundColor = 'var(--search-button-bg)';
+            buttons[currentIndex].style.opacity = '0.75';
+        }
+    }
+});
+
+// 初始时，将第一个按钮设为选中样式
+buttons[0].style.backgroundColor = 'var(--search-button-bg)';
+buttons[0].style.opacity = '0.75';

@@ -1,148 +1,211 @@
-#search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* position: absolute;
-    top: 7px; */
-}
-
-#searchBox {
+div#searchPage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background-color: var(--card-bg);
-    opacity: 0.5;
-    backdrop-filter: blur(0px);
-    /* padding: 0px 8px; */
-    border-radius: 22px;
-    color: var(--on-card-bg);
-    transition: all .25s ease-in-out;
-    font-size: 14px;
-    font-weight: var(--font-weight-regular);
-    user-select: none;
-    /* margin-block-end: 1em; */
-    /* position: fixed; */
+    opacity: 0;
+    transform: scale(0);
+    transition: all .2s ease-in-out;
+    margin-block-end: 44px;
 }
 
-#searchBoxMain .text {
-    font-family: 'Figtree', 'MiSans';
+.nav-items {
+    background-color: #0000002d;
+    position: fixed;
     display: flex;
-    border: 0;
-    width: auto;
-    /* height: 35px; */
-    font-size: 14px;
-    font-weight: var(--font-weight-regular);
-    outline: none;
-    background-color: unset;
-    color: var(--on-card-bg);
-    text-align: center;
-    transition: all .25s ease-in-out;
-}
-
-#searchBox:hover {
-    height: 44px;
-    width: 44px;
-    /* padding: 0px 8px; */
-    border-radius: 12px;
-    opacity: 1;
-    backdrop-filter: blur(12px);
+    /* width: 100%; */
+    /* height: 100%; */
 }
 
 #searchBoxMain {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 12px;
     width: 356px;
-    height: 44px;
     background-color: var(--card-bg-hover);
     backdrop-filter: blur(10px);
-    /* padding: 14px; */
-    border-radius: 12px;
+    padding: 14px;
+    border-radius: 18px;
     color: var(--on-card-bg);
     transition: all .25s ease-in-out;
     font-size: 14px;
     font-weight: var(--font-weight-regular);
     user-select: none;
-    /* margin-block-end: 44px; */
-    position: absolute;
-    top: 0px;
     box-shadow: 0px 10px 40px #00000060;
 }
 
-#searchBox:hover p {
-    height: auto;
-    margin: 0;
-    font-size: 14px;
-    font-weight: var(--font-weight-regular);
+#searchBoxMain header {
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    height: 42px;
+    align-items: center;
 }
 
-#searchBoxMain:hover .text {
-    font-family: 'Figtree', 'MiSans';
+#searchBoxMain footer {
     display: flex;
-    border: 0;
+    justify-content: flex-end;
     width: 100%;
+    margin-bottom: 1px;
+}
+
+span.tips {
+    font-family: 'MiSans';
+    font-size: 13px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0);
+    color: rgba(26, 27, 28, 0);
+    border-radius: 8px;
+    gap: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s ease-in-out;
+}
+
+span.tips:hover {
+    color: rgba(26, 27, 28, 0.75);
+}
+
+button:hover span.tips span,
+span.tips:hover span {
+    opacity: 1;
+}
+
+button:hover span.tips svg path,
+span.tips:hover svg path {
+    opacity: 0;
+}
+
+span.tips span {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--span-text);
+    font-family: 'DM Sans';
+    font-weight: 500;
     font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+}
+
+span.tips svg path {
+    fill: var(--on-card-bg);
+    opacity: 1;
+    transition: all .25s ease-in-out;
+}
+
+span.tips svg {
+    position: absolute;
+    right: 28px;
+}
+
+#searchBoxText {
+    font-family: 'MiSans';
+    /* display: flex; */
+    border: 0;
+    width: calc(100% - 64px);
+    /* height: 35px; */
+    font-size: 16px;
     font-weight: var(--font-weight-regular);
     outline: none;
     background-color: unset;
-    color: var(--on-card-bg-hover);
-}
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
     color: var(--on-card-bg);
+    /* text-align: center; */
+    transition: all .25s ease-in-out;
+    margin: 0;
+    padding: 0;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-    color: var(--on-card-bg);
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-    color: var(--on-card-bg);
-}
-
-#searchBarHover {
-    display: none;
-}
-
-.nav-items {
-    background-color: #0000002d;
-    width: -webkit-fill-available;
+#searchBox {
     width: 100%;
-    height: -webkit-fill-available;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
+    padding: unset;
+    margin-left: 12px;
     display: flex;
-    box-sizing: border-box;
-    transition: opacity .3s ease-in-out;
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    top: 0;
-    border-radius: 10px;
-    justify-content: flex-end;
-    transform: scaleY(0);
     align-items: center;
-    z-index: 6;
+    justify-content: space-between;
 }
 
-#searchBarHover:checked~.nav-items {
-    transform: scaleY(1);
+button #tips {
+    position: fixed;
+    top: 48.25%;
+    left: 46px;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: #ffffffca;
+    font-size: 14px;
+}
+
+button:hover #tips {
     opacity: 1;
-    transition: opacity .3s ease-in-out;
 }
 
-#searchBarHover:checked~#searchBox {
-    /* backdrop-filter: blur(0px); */
-    background-color: #00000059;
-    /* transition: opacity .3s ease-in-out; */
+button #tips span {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    padding: 2px 6px;
+    margin-left: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 10px 40px #00000060;
+    color: #FFFFFF;
+    font-family: 'DM Sans';
+    white-space: nowrap;
 }
 
-#baidulogo {
-    fill: #FFFFFF;
+#closeSearch {
+    position: fixed;
+    height: calc(100vw + 60px);
+    width: 100vw;
+}
+
+form button {
+    width: auto;
+    background: unset;
+    border: unset;
+}
+
+.searchTools button {
+    border: unset;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    padding: 12px 14px;
+    font-family: 'MiSans';
+    opacity: 0.45;
+    transition: background .2s ease-in-out, opactiy 0.25s ease-in-out;
+}
+
+.searchTools button:hover {
+    opacity: 0.75;
+}
+
+.searchTools button p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.searchTools {
+    width: calc(100% + 4px);
+    padding: unset;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.searchTools li {
+    display: flex;
 }

@@ -13,6 +13,11 @@
     src: url(./fonts/MiSans-VF.ttf);
 }
 
+:root {
+    --mdui-color-background-light: rgb(0, 0, 0);
+    --mdui-color-background-dark: rgb(0, 0, 0);
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         --popup-bg: #f1f1f7;
@@ -25,10 +30,13 @@
         --list-line: #ffffffec;
         --list-bg-hover: #ffffff;
         --on-list-bg: #1b1b1b;
+        --span-text: #1b1b1b9e;
         --card-bg: #ffffff8a;
         --card-bg-hover: #ffffffc5;
         --on-card-bg: #1a1a1a8e;
         --on-card-bg-hover: #1f1f1fef;
+        --search-line-hover: #ffffff00;
+        --search-button-bg: rgba(0, 0, 0, 0.1);
         --font-weight-light: 350;
         --font-weight-regular: 450;
     }
@@ -37,6 +45,25 @@
         background-color: #ffffff;
     }
 
+    .window {
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .searchTools button {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    .window button {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .searchTools button:hover {
+        background: var(--search-button-bg);
+    }
+
+    .window button:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,10 +78,13 @@
         --list-line: #1f1f1fec;
         --list-bg-hover: #181818;
         --on-list-bg: #FFFFFF;
+        --span-text: #FFFFFF9e;
         --card-bg: #00000073;
         --card-bg-hover: #000000ab;
         --on-card-bg: #ffffff8e;
         --on-card-bg-hover: #ffffffef;
+        --search-line-hover: #00000000;
+        --search-button-bg: rgba(0, 0, 0, 0.4);
         --font-weight-light: 250;
         --font-weight-regular: 350;
     }
@@ -62,6 +92,74 @@
     body {
         background-color: #242424;
     }
+
+    .window {
+        background-color: rgba(36, 36, 36, 0.75);
+    }
+
+    .searchTools button {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    .window button {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .window button:hover {
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .searchTools button:hover {
+        background: var(--search-button-bg);
+    }
+}
+
+#disconnectWarn {
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transform: scale(0);
+    transition: all 0.5s cubic-bezier(0.5, -0.15, 0.50, 1.15);
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 22px 22px 22px;
+    max-width: calc(340px - 44px);
+    width: calc(340px - 44px);
+    border-radius: 22px;
+    box-shadow: 0 12px 64px #00000050;
+    backdrop-filter: blur(40px);
+    gap: 16px;
+}
+
+.window p {
+    font-family: 'MiSans';
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 350;
+    color: var(--on-list-bg);
+    max-width: 256px;
+    margin-left: 11px;
+}
+
+.window button {
+    width: 100%;
+    padding: 8px;
+    border: unset;
+    border-radius: 8px;
+    transition: all .25s ease-in-out;
+    font-family: 'MiSans';
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 6px;
 }
 
 main {
@@ -92,4 +190,181 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.connectTips {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 19px;
+    margin: 0;
+    gap: 8px;
+    font-size: 14px;
+    font-family: 'MiSans';
+    font-weight: 300;
+    color: var(--on-list-bg);
+    opacity: 0;
+    animation: p2fadein 6s cubic-bezier(0.60, -0.10, 0.40, 1.10);
+    transition: all .3s ease-in-out;
+    transform: scale(0.7);
+    transform-origin: top center;
+    background: var(--list-bg);
+    backdrop-filter: blur(10px);
+    padding: 14px 48px;
+    border-radius: 24px;
+    box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.5);
+}
+
+.disconnectTips {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 19px;
+    margin: 0;
+    gap: 8px;
+    font-size: 14px;
+    font-family: 'MiSans';
+    font-weight: 300;
+    color: var(--on-list-bg);
+    opacity: 0;
+    animation: disfadein 6s cubic-bezier(0.60, -0.10, 0.40, 1.10);
+    transition: all .3s ease-in-out;
+    transform: scale(0.7);
+    transform-origin: top center;
+    background: var(--list-bg);
+    backdrop-filter: blur(10px);
+    padding: 14px 48px;
+    border-radius: 24px;
+    box-shadow: 0px 6px 36px rgba(0, 0, 0, 0.5);
+    margin-left: 0;
+}
+
+.connectTips p,
+.disconnectTips p {
+    margin: 0;
+}
+
+.connectTips img,
+.disconnectTips img {
+    height: 16px;
+    width: 16px;
+}
+
+@keyframes p2fadein {
+    0% {
+        opacity: 0;
+        top: -10px;
+        transform: scale(0.7);
+    }
+
+    8% {
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    92% {
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        top: -10px;
+        transform: scale(0.7);
+    }
+}
+
+@keyframes disfadein {
+    0% {
+        margin-left: 0;
+        opacity: 0;
+        top: -10px;
+        transform: scale(0.7);
+    }
+
+    8% {
+        margin-left: 0;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    46% {
+        margin-left: 0;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    47% {
+        margin-left: -13px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    48% {
+        margin-left: -26px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    49% {
+        margin-left: -13px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    50% {
+        margin-left: 0;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    51% {
+        margin-left: 13px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    52% {
+        margin-left: 26px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    53% {
+        margin-left: 13px;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    54% {
+        margin-left: 0;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    92% {
+        margin-left: 0;
+        opacity: 1;
+        top: 19px;
+        transform: scale(1);
+    }
+
+    100% {
+        margin-left: 0;
+        opacity: 0;
+        top: -10px;
+        transform: scale(0.7);
+    }
 }
